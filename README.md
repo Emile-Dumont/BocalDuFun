@@ -1,67 +1,54 @@
-🍿 Bocal.app - Ne perdez plus 30 minutes à choisir un film
-Bocal.app est une application web (Progressive Web App) conçue pour résoudre le dilemme classique des soirées cinéma. Elle permet de créer des listes de films collaboratives ("bocaux") et utilise une roulette intelligente pour tirer au sort le film parfait selon vos critères du moment.
+<div align="center">
+  <h1>🍿 Bocal.app</h1>
+  <p><em>Ne perdez plus 30 minutes à choisir un film.</em></p>
+  
+  ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+  ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+  ![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)
+  ![TMDB](https://img.shields.io/badge/TMDB_API-01B4E4?style=for-the-badge&logo=themoviedb&logoColor=white)
+</div>
 
-✨ Fonctionnalités Principales
-🎲 La Roulette Intelligente : Tirage au sort interactif parmi les films "À voir". Filtrage dynamique par genre, durée maximale, ou disponibilité sur les plateformes de streaming (Netflix, Prime, Canal+...).
+---
 
-👥 Listes Collaboratives : Création de groupes privés (bocaux), système d'invitation par codes uniques et gestion des droits partagés.
+**Bocal.app** est une application web (Progressive Web App) conçue pour résoudre le dilemme classique des soirées cinéma. Elle permet de créer des listes de films collaboratives ("bocaux") et utilise une **roulette intelligente** pour tirer au sort le film parfait selon vos critères du moment.
 
-🎬 Intégration TMDB (The Movie Database) : Moteur de recherche natif avec autocomplétion, récupération automatique des affiches, synopsis, casting, et détection des plateformes de streaming françaises (via API REST).
+## ✨ Fonctionnalités Principales
 
-📱 Progressive Web App (PWA) : Intégration d'un Manifest complet permettant l'installation de l'application sur mobile (iOS & Android) pour une expérience native.
+| Fonctionnalité | Description |
+| :--- | :--- |
+| **🎲 Roulette Intelligente** | Tirage au sort interactif parmi les films "À voir". Filtrage dynamique par genre, durée maximale ou plateforme de streaming (Netflix, Prime, Canal+...). |
+| **👥 Listes Collaboratives** | Création de groupes privés (bocaux), système d'invitation par codes uniques et gestion des droits partagés. |
+| **🎬 Intégration TMDB** | Moteur de recherche natif avec autocomplétion, récupération automatique des affiches, synopsis, casting et détection des plateformes de streaming françaises. |
+| **📱 PWA Ready** | Intégration d'un Manifest complet permettant l'installation de l'application sur mobile (iOS & Android) pour une expérience native. |
+| **⭐ Dimension Sociale** | Système d'ajout d'amis, notation des films (sur 5 étoiles), gestion des profils et ajout de citations mémorables. |
 
-⭐ Dimension Sociale : Système d'ajout d'amis, notation des films (sur 5 étoiles), gestion des profils et ajout de citations mémorables.
+## 🛡️ Architecture & Sécurité
 
-🛡️ Architecture & Bonnes Pratiques (Sécurité)
-Ce projet a été restructuré avec une attention particulière portée aux standards de l'industrie et à la sécurité web :
+Ce projet est structuré selon les standards de l'industrie avec une attention particulière portée à la sécurité web :
 
-Protection CSRF (Cross-Site Request Forgery) : Implémentation de jetons de sécurité cryptographiques sur toutes les requêtes sensibles et destructrices (suppression de films, départ d'une liste, modification de statuts) via hash_equals.
+*   **Protection CSRF :** Implémentation de jetons de sécurité cryptographiques sur toutes les requêtes sensibles et destructrices (suppression de films, départ d'une liste, actions diverses) validés via `hash_equals`.
+*   **Isolation des Secrets :** Les identifiants de base de données et les clés d'API sont strictement isolés dans un fichier `config.php` non versionné (via `.gitignore`). Un modèle `config.example.php` est fourni pour faciliter le déploiement.
+*   **Principe DRY (Don't Repeat Yourself) :** Centralisation de la configuration et exposition sécurisée des variables globales pour un code maintenable côté serveur et client.
+*   **Prévention SQLi :** Utilisation systématique de requêtes préparées via l'interface PDO de PHP.
+*   **UX/UI Moderne :** Interface adaptative avec gestion de trois thèmes (Sombre, Clair, Néon) sauvegardés en cookies.
 
-Isolation des Secrets : Les identifiants de base de données et les clés d'API sont strictement isolés dans un fichier config.php protégé et ignoré par Git (.gitignore). Un modèle config.example.php est fourni pour le déploiement.
+## 🚀 Installation & Déploiement
 
-Principe DRY (Don't Repeat Yourself) : Centralisation de la configuration et exposition sécurisée des variables globales (ex: TMDB_API_KEY) pour un code maintenable et évolutif côté serveur comme côté client.
+**1. Cloner le dépôt**
+```bash
+git clone https://github.com/Emile-Dumont/BocalDuFun.git
+cd BocalDuFun
+```
 
-Prévention des Injections SQL : Utilisation systématique de requêtes préparées via l'objet PDO de PHP.
+**2. Configuration de l'environnement**
+* Dupliquez le fichier `config.example.php` à la racine et renommez-le en `config.php`.
+* Renseignez vos identifiants MySQL et votre clé API TMDB à l'intérieur.
 
-UX/UI Moderne : Interface adaptative (Responsive Design) avec gestion de trois thèmes (Sombre, Clair, Néon) sauvegardés en cookies.
+**3. Base de données**
+* Importez la structure SQL de votre sauvegarde dans une base de données MySQL ou MariaDB vide.
 
-🛠️ Stack Technique
-Backend : PHP (Architecture optimisée et sécurisée)
+**4. Lancement**
+* Accédez au dossier du projet via votre serveur web local (ex: XAMPP, Laragon) ou déployez sur votre espace d'hébergement.
 
-Base de données : MySQL / MariaDB (Interface PDO)
-
-Frontend : HTML5, CSS3 (Variables CSS natives), JavaScript Vanilla (ES6+, Fetch API, animations fluides)
-
-API Externe : TheMovieDB API v3
-
-🚀 Installation & Déploiement en Local
-Prérequis
-Un serveur web local (XAMPP, MAMP, Laragon...)
-
-PHP 7.4 ou supérieur
-
-Une clé API gratuite TheMovieDB
-
-Étapes d'installation
-Cloner le dépôt
-
-Bash
-git clone https://github.com/votre-nom/bocal-app.git
-cd bocal-app
-Configuration de l'environnement sécurisé
-
-Copiez le fichier config.example.php et renommez-le en config.php.
-
-Renseignez vos identifiants MySQL et votre clé API TMDB dans ce nouveau fichier. Ce fichier ne sera jamais poussé sur GitHub.
-
-Base de données
-
-Créez une base de données MySQL vide.
-
-Importez la structure des tables (le fichier .sql de sauvegarde de votre base).
-
-Lancement
-
-Accédez au dossier du projet via votre serveur local (ex: http://localhost/bocal-app).
-
-Développé avec passion pour mettre fin aux débats interminables de soirées ciné. 🍿
+---
+*Développé avec passion pour mettre fin aux débats interminables de soirées ciné.* 🍿
