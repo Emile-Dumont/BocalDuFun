@@ -14,7 +14,7 @@
 
 ## 🔑 Tester l'application
 
-L'application est en ligne : **[URL_DU_SITE]([URL_DU_SITE](https://bocaldufun.alwaysdata.net/index.php))**
+L'application est en ligne : https://bocaldufun.alwaysdata.net/index.php
 
 Un compte de démonstration est disponible pour la tester sans inscription :
 
