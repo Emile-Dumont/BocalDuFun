@@ -14,7 +14,7 @@
 
 ## 🔑 Tester l'application
 
-L'application est en ligne : https://bocaldufun.alwaysdata.net/index.php
+L'application est en ligne : **[bocaldufun.alwaysdata.net](https://bocaldufun.alwaysdata.net/index.php)**
 
 Un compte de démonstration est disponible pour la tester sans inscription :
 
