@@ -12,6 +12,17 @@
 
 **Bocal.app** est une application web (Progressive Web App) conçue pour résoudre le dilemme classique des soirées cinéma. Elle permet de créer des listes de films collaboratives ("bocaux") et utilise une **roulette intelligente** pour tirer au sort le film parfait selon vos critères du moment.
 
+## 🔑 Tester l'application
+
+L'application est en ligne : **[URL_DU_SITE](URL_DU_SITE)**
+
+Un compte de démonstration est disponible pour la tester sans inscription :
+
+| | |
+| :--- | :--- |
+| **Identifiant** | `demo@bocal.app` |
+| **Mot de passe** | `1234` |
+
 ## ✨ Fonctionnalités Principales
 
 | Fonctionnalité | Description |
@@ -52,3 +63,4 @@ cd BocalDuFun
 
 ---
 *Développé avec passion pour mettre fin aux débats interminables de soirées ciné.* 🍿
+
